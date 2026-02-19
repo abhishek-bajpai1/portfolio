@@ -1,0 +1,131 @@
+.section {
+    padding: var(--section-gap) 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.leftCol {
+    position: sticky;
+    top: 100px;
+}
+
+.rightCol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Not a fit */
+.notFit {
+    margin-top: 40px;
+    padding: 24px;
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: 16px;
+}
+
+.notFitTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #EF4444;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.notFitList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.notFitItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #94A3B8;
+}
+
+/* Client cards */
+.clientCard {
+    padding: 24px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.clientTop {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.clientIcon {
+    width: 48px;
+    height: 48px;
+    background: color-mix(in srgb, var(--c) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 25%, transparent);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.fitBadge {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 100px;
+    padding: 2px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.clientTitle {
+    font-size: 17px;
+    font-weight: 700;
+    color: #F1F5F9;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.clientDesc {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    background: color-mix(in srgb, var(--c) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 22%, transparent);
+    color: var(--c);
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .leftCol {
+        position: static;
+    }
+}
