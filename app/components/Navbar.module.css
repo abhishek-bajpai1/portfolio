@@ -91,11 +91,71 @@
     font-weight: 600;
     transition: all 0.3s ease;
     white-space: nowrap;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .navCta:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(108, 99, 255, 0.45);
+}
+
+.navRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.loginLink {
+    color: #94A3B8;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.loginLink:hover {
+    color: #F1F5F9;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.userAvatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6C63FF, #38BDF8);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: default;
+}
+
+.logoutBtn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #64748B;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.logoutBtn:hover {
+    color: #F1F5F9;
+    border-color: rgba(239, 68, 68, 0.4);
+    background: rgba(239, 68, 68, 0.08);
 }
 
 /* Burger */
