@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
+import ProdTechLogo from './ProdTechLogo';
 
 declare global {
     interface Window {
@@ -47,8 +48,7 @@ export default function Navbar() {
             <div className={`container ${styles.inner}`}>
                 {/* Logo */}
                 <a href="#hero" className={styles.logo} onClick={() => handleNavClick('#hero')}>
-                    <span className={styles.logoMark}>AB</span>
-                    <span className={styles.logoText}>ProdTech Labs</span>
+                    <ProdTechLogo size={36} showText={true} />
                 </a>
 
                 {/* Desktop Links */}

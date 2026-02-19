@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './Footer.module.css';
+import ProdTechLogo from './ProdTechLogo';
 
 const team = [
     { role: 'Team Lead Developer', name: 'Abhishek Bajpai' },
@@ -20,11 +21,7 @@ export default function Footer() {
             <div className="container">
                 <div className={styles.inner}>
                     <div className={styles.brand}>
-                        <div className={styles.logoMark}>AB</div>
-                        <div>
-                            <div className={styles.name}>ProdTech Labs</div>
-                            <div className={styles.title}>Product & Technology Consultant</div>
-                        </div>
+                        <ProdTechLogo size={34} showText={true} />
                     </div>
 
                     <div className={styles.links}>
