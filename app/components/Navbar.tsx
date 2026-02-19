@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 declare global {
@@ -62,6 +63,11 @@ export default function Navbar() {
                             </button>
                         </li>
                     ))}
+                    <li>
+                        <Link href="/clients" className={styles.navLink} style={{ textDecoration: 'none' }}>
+                            Clients
+                        </Link>
+                    </li>
                 </ul>
 
                 {/* CTA */}
