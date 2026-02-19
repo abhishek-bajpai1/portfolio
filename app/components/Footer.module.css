@@ -110,6 +110,97 @@
     color: #475569;
 }
 
+.teamSection {
+    padding: 8px 0;
+}
+
+.teamToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 0;
+    cursor: pointer;
+    color: #94A3B8;
+    transition: color 0.2s;
+}
+
+.teamToggle:hover {
+    color: #E2E8F0;
+}
+
+.teamToggleLabel {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.teamChevron {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.teamChevronOpen {
+    transform: rotate(180deg);
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    padding: 0;
+}
+
+.teamGridOpen {
+    max-height: 400px;
+    opacity: 1;
+    padding: 16px 0;
+}
+
+.teamMember {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.memberAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6C63FF33, #38BDF833);
+    border: 1px solid rgba(108, 99, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #A78BFA;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    flex-shrink: 0;
+}
+
+.memberName {
+    font-size: 13px;
+    font-weight: 600;
+    color: #E2E8F0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.memberRole {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+}
+
 @media (max-width: 768px) {
     .inner {
         flex-direction: column;

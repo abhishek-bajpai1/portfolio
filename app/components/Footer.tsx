@@ -1,8 +1,20 @@
 'use client';
 
+import { useState } from 'react';
 import styles from './Footer.module.css';
 
+const team = [
+    { role: 'Team Lead Developer', name: 'Abhishek Bajpai' },
+    { role: 'ML Engineer', name: 'Aman Joshi' },
+    { role: 'DevOps', name: 'Suryam Sourya' },
+    { role: 'App Developer', name: 'Arpit Pandey' },
+    { role: 'Cloud Engineer', name: 'Aditya Upadhya' },
+    { role: 'Bugs Solver', name: 'Ark Arya' },
+];
+
 export default function Footer() {
+    const [teamOpen, setTeamOpen] = useState(false);
+
     return (
         <footer className={styles.footer}>
             <div className="container">
@@ -49,6 +61,40 @@ export default function Footer() {
                                 <polyline points="22,6 12,13 2,6" />
                             </svg>
                         </a>
+                    </div>
+                </div>
+
+                <div className={styles.divider} />
+
+                {/* Team Toggle */}
+                <div className={styles.teamSection}>
+                    <button
+                        className={styles.teamToggle}
+                        onClick={() => setTeamOpen(!teamOpen)}
+                        aria-expanded={teamOpen}
+                    >
+                        <span className={styles.teamToggleLabel}>
+                            👥 Our Team
+                        </span>
+                        <span className={`${styles.teamChevron} ${teamOpen ? styles.teamChevronOpen : ''}`}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                <path d="M6 9l6 6 6-6" />
+                            </svg>
+                        </span>
+                    </button>
+
+                    <div className={`${styles.teamGrid} ${teamOpen ? styles.teamGridOpen : ''}`}>
+                        {team.map((member) => (
+                            <div key={member.name} className={styles.teamMember}>
+                                <div className={styles.memberAvatar}>
+                                    {member.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
+                                </div>
+                                <div>
+                                    <div className={styles.memberName}>{member.name}</div>
+                                    <div className={styles.memberRole}>{member.role}</div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
