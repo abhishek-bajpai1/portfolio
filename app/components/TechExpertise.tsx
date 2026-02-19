@@ -63,9 +63,20 @@ const techGroups = [
         color: '#A78BFA',
         techs: [
             { name: 'Mixpanel / Amplitude', level: 85 },
+            { name: 'Google Analytics', level: 90 },
             { name: 'Figma & UX', level: 82 },
             { name: 'A/B Testing', level: 78 },
+            { name: 'CMS (WordPress / Contentful)', level: 85 },
             { name: 'Product Analytics', level: 88 },
+        ],
+    },
+    {
+        category: 'AI & ML',
+        icon: '🤖',
+        color: '#F59E0B',
+        techs: [
+            { name: 'Machine Learning', level: 80 },
+            { name: 'Deep Learning', level: 75 },
         ],
     },
 ];

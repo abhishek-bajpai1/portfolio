@@ -3,6 +3,14 @@
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 
+declare global {
+    interface Window {
+        Calendly?: {
+            initPopupWidget: (opts: { url: string }) => void;
+        };
+    }
+}
+
 const navLinks = [
     { label: 'Services', href: '#services' },
     { label: 'Expertise', href: '#expertise' },
@@ -14,6 +22,12 @@ const navLinks = [
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const openCalendly = () => {
+        window.Calendly?.initPopupWidget({
+            url: 'https://calendly.com/abhishekbajpai680/30min',
+        });
+    };
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -51,8 +65,8 @@ export default function Navbar() {
                 </ul>
 
                 {/* CTA */}
-                <a
-                    href="mailto:abhishek@example.com"
+                <button
+                    onClick={openCalendly}
                     className={styles.navCta}
                     id="navbar-cta"
                 >
@@ -60,7 +74,7 @@ export default function Navbar() {
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
-                </a>
+                </button>
 
                 {/* Mobile Burger */}
                 <button
@@ -83,9 +97,9 @@ export default function Navbar() {
                         {link.label}
                     </button>
                 ))}
-                <a href="mailto:abhishek@example.com" className={`btn-primary ${styles.mobileCta}`}>
+                <button onClick={openCalendly} className={`btn-primary ${styles.mobileCta}`}>
                     Book a Call
-                </a>
+                </button>
             </div>
         </nav>
     );
