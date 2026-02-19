@@ -3,6 +3,14 @@
 import { useState } from 'react';
 import styles from './Contact.module.css';
 
+declare global {
+    interface Window {
+        Calendly?: {
+            initPopupWidget: (opts: { url: string }) => void;
+        };
+    }
+}
+
 export default function Contact() {
     const [copied, setCopied] = useState(false);
 
@@ -10,6 +18,12 @@ export default function Contact() {
         navigator.clipboard.writeText('abhishekbajpai680@gmail.com');
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+    };
+
+    const openCalendly = () => {
+        window.Calendly?.initPopupWidget({
+            url: 'https://calendly.com/abhishekbajpai680/30min',
+        });
     };
 
     return (
@@ -37,10 +51,8 @@ export default function Contact() {
 
                     {/* CTA Cards */}
                     <div className={styles.ctaGrid}>
-                        <a
-                            href="https://calendly.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={openCalendly}
                             className={styles.ctaCard}
                             id="contact-calendly"
                         >
@@ -54,7 +66,7 @@ export default function Contact() {
                             <svg className={styles.ctaArrow} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M9 18l6-6-6-6" />
                             </svg>
-                        </a>
+                        </button>
 
                         <button onClick={copyEmail} className={styles.ctaCard} id="contact-email">
                             <div className={styles.ctaIcon} style={{ background: 'rgba(56,189,248,0.15)', borderColor: 'rgba(56,189,248,0.3)' }}>
