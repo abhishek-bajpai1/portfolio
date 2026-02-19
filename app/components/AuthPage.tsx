@@ -45,6 +45,11 @@ export default function AuthPage({ mode }: AuthPageProps) {
         e.preventDefault();
         setError('');
         setLoading(true);
+        if (!auth) {
+            setError('Firebase is not configured. Please add environment variables.');
+            setLoading(false);
+            return;
+        }
         try {
             if (isLogin) {
                 await signInWithEmailAndPassword(auth, email, password);
@@ -63,6 +68,11 @@ export default function AuthPage({ mode }: AuthPageProps) {
     const handleGoogle = async () => {
         setError('');
         setGoogleLoading(true);
+        if (!auth || !googleProvider) {
+            setError('Firebase is not configured. Please add environment variables.');
+            setGoogleLoading(false);
+            return;
+        }
         try {
             await signInWithPopup(auth, googleProvider);
             router.push('/');
